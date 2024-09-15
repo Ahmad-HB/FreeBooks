@@ -39,16 +39,16 @@ public class AccountsController : Controller
                 {
                     // TempData["SuccessMessage"] = "Role created successfully.";
                     HttpContext.Session.SetString("msgType", "success");
-                    HttpContext.Session.SetString("title", "save done");
-                    HttpContext.Session.SetString("msg", "Role saved successfully");
+                    HttpContext.Session.SetString("title", Resource.Resources.lbSave);
+                    HttpContext.Session.SetString("msg", Resource.Resources.lbSaveMsgRole);
                     return RedirectToAction("Roles");
                 }
                 else
                 {
                     // TempData["ErrorMessage"] = "Error creating role.";
                     HttpContext.Session.SetString("msgType", "error");
-                    HttpContext.Session.SetString("title", "save not done");
-                    HttpContext.Session.SetString("msg", "Role did not save successfully");
+                    HttpContext.Session.SetString("title", Resource.Resources.lbNotSaved);
+                    HttpContext.Session.SetString("msg", Resource.Resources.lbNotSavedMsgRole);
                     return RedirectToAction("Roles");
                 }
             }
@@ -63,15 +63,15 @@ public class AccountsController : Controller
                     {
                         // TempData["SuccessMessage"] = "Role updated successfully.";
                         HttpContext.Session.SetString("msgType", "success");
-                        HttpContext.Session.SetString("title", "Eidt done");
-                        HttpContext.Session.SetString("msg", "user Eidt successfully");
+                        HttpContext.Session.SetString("title", Resource.Resources.lbUpdate);
+                        HttpContext.Session.SetString("msg", Resource.Resources.lbUpdateMsgRole);
                     }
                     else
                     {
                         // TempData["ErrorMessage"] = "Error updating role.";
                         HttpContext.Session.SetString("msgType", "error");
-                        HttpContext.Session.SetString("title", "Eidt not done");
-                        HttpContext.Session.SetString("msg", "user did not Eidt successfully");
+                        HttpContext.Session.SetString("title", Resource.Resources.lbNotUpdate);
+                        HttpContext.Session.SetString("msg", Resource.Resources.lbNotUpdateMsgRole);
                     }
                 }
                 else
@@ -101,7 +101,7 @@ public class AccountsController : Controller
     //             if (Result.Succeeded)
     //             {
     //                 HttpContext.Session.SetString("msgType", "success");
-    //                 HttpContext.Session.SetString("title", "save done");
+    //                 HttpContext.Session.SetString("title", Resource.Resources.lbSave);
     //                 HttpContext.Session.SetString("msg", "user saved successfully");
     //                 return RedirectToAction("Roles");
     //             }
@@ -123,7 +123,7 @@ public class AccountsController : Controller
     //             if (result.Succeeded)
     //             {
     //                 HttpContext.Session.SetString("msgType", "success");
-    //                 HttpContext.Session.SetString("title", "Eidt done");
+    //                 HttpContext.Session.SetString("title", Resource.Resources.lbUpdate);
     //                 HttpContext.Session.SetString("msg", "user Eidt successfully");
     //             }
     //             else
@@ -186,23 +186,23 @@ public class AccountsController : Controller
                     if (Role.Succeeded)
                     {
                         HttpContext.Session.SetString("msgType", "success");
-                        HttpContext.Session.SetString("title", "save done");
-                        HttpContext.Session.SetString("msg", "user role saved successfully");
+                        HttpContext.Session.SetString("title", Resource.Resources.lbSave);
+                        HttpContext.Session.SetString("msg", Resource.Resources.lbNotSavedMsgUserRole);
                         return RedirectToAction("Register", "Accounts");
                     }
                     else
                     {
                         HttpContext.Session.SetString("msgType", "error");
-                        HttpContext.Session.SetString("title", "save not done");
-                        HttpContext.Session.SetString("msg", "user role did not save successfully");
+                        HttpContext.Session.SetString("title", Resource.Resources.lbNotSaved);
+                        HttpContext.Session.SetString("msg", Resource.Resources.lbNotSavedMsgUserRole);
                         return RedirectToAction("Register", "Accounts");
                     }
                 }
                 else
                 {
                     HttpContext.Session.SetString("msgType", "error");
-                    HttpContext.Session.SetString("title", "save not done");
-                    HttpContext.Session.SetString("msg", "user did not save successfully");
+                    HttpContext.Session.SetString("title", Resource.Resources.lbNotSaved);
+                    HttpContext.Session.SetString("msg", Resource.Resources.lbNotSavedMsgUser);
                     return RedirectToAction("Register", "Accounts");
                 }
             }
@@ -226,23 +226,23 @@ public class AccountsController : Controller
                     if (addroles.Succeeded)
                     {
                         HttpContext.Session.SetString("msgType", "success");
-                        HttpContext.Session.SetString("title", "Edit done");
-                        HttpContext.Session.SetString("msg", "user role Edit successfully");
+                        HttpContext.Session.SetString("title", Resource.Resources.lbUpdate);
+                        HttpContext.Session.SetString("msg", Resource.Resources.lbNotUpdateMsgUserRole);
                         return RedirectToAction("Register", "Accounts");
                     }
                     else
                     {
                         HttpContext.Session.SetString("msgType", "error");
-                        HttpContext.Session.SetString("title", "Edit not done");
-                        HttpContext.Session.SetString("msg", "user role did not Edit successfully");
+                        HttpContext.Session.SetString("title", Resource.Resources.lbNotUpdate);
+                        HttpContext.Session.SetString("msg", Resource.Resources.lbNotUpdateMsgUserRole);
                         return RedirectToAction("Register", "Accounts");
                     }
                 }
                 else
                 {
                     HttpContext.Session.SetString("msgType", "error");
-                    HttpContext.Session.SetString("title", "Edit not done");
-                    HttpContext.Session.SetString("msg", "user did not Edit successfully");
+                    HttpContext.Session.SetString("title", Resource.Resources.lbNotUpdate);
+                    HttpContext.Session.SetString("msg", Resource.Resources.lbNotUpdateMsgUser);
                     return RedirectToAction("Register", "Accounts");
                 }
             }
