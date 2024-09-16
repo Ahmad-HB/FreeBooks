@@ -16,6 +16,18 @@ builder.Services.AddDbContext<FreeBookDbContext>(options =>
     )
 );
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<FreeBookDbContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredUniqueChars = 0;
+    options.Password.RequiredLength = 8;
+    
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

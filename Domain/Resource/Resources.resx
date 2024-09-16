@@ -139,8 +139,8 @@
     <value>يجب الا يقل عدد حروف الكلمة عن ثلاث حروف</value>
   </data>
     <data name="MinLengthPassword" xml:space="preserve">
-    <value>يجب الا يقل عدد حروف الكلمة عن خمس ارقام</value>
-  </data>
+        <value>يجب الا يقل عدد حروف الكلمة عن ثماني ارقام</value>
+    </data>
     <data name="Password" xml:space="preserve">
     <value>يجب ادخال الرقم السري</value>
   </data>

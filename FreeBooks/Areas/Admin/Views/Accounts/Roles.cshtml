@@ -73,8 +73,9 @@
                                         }
                                     </td>
                                     <td>
-                                        <input type="button" class="btn btn-info" onclick="Edit('@item.Id','@item.Name')" value="@Resources.lbbtnEdit" data-toggle="modal" data-target="#exampleModal"/>
-                                        <input type="button" class="btn btn-danger" onclick="DeleteRole('@item.Id')" value="@Resources.lbbtnDelete"/>
+                                        <input type="button" class="btn btn-info btn-sm" onclick="Edit('@item.Id','@item.Name')" value="@Resources.lbbtnEdit" data-toggle="modal" data-target="#exampleModal"/>
+                                        |
+                                        <input type="button" class="btn btn-danger btn-sm" onclick="DeleteRole('@item.Id')" value="@Resources.lbbtnDelete"/>
                                     </td>
                                 </tr>
                             }
@@ -93,6 +94,7 @@
     </section>
     <!-- /.content -->
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

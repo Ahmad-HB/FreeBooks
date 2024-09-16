@@ -3,6 +3,7 @@ using Infrastructure.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Volo.Abp.Domain.Entities;
 
 namespace Infrastructure.Data;
 
@@ -32,7 +33,12 @@ public class FreeBookDbContext : IdentityDbContext<ApplicationUser>
         builder.Entity<LogSubCategory>().Property(x => x.Id).HasDefaultValueSql("(UUID())");
         builder.Entity<Book>().Property(x => x.Id).HasDefaultValueSql("(UUID())");
         builder.Entity<LogBook>().Property(x => x.Id).HasDefaultValueSql("(UUID())");
-       
+        builder.Entity<VwUser>(Entity =>
+        {
+            Entity.HasNoKey();
+            Entity.ToView("VwUsers");
+        });
+
     }
     public DbSet<Category> Categories { get; set; }
     public DbSet<LogCategory> LogCategories { get; set; }
@@ -40,5 +46,6 @@ public class FreeBookDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<LogSubCategory> LogSubCategories { get; set; }
     public DbSet<Book> Books { get; set; }
     public DbSet<LogBook> LogBooks { get; set; }
+    public DbSet<VwUser> VwUsers { get; set; }
     
 }

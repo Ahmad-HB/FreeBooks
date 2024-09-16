@@ -14,3 +14,4 @@
 /Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/ref/Domain.dll
 /Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.csproj.GenerateResource.cache
 /Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.Resource.Resources.resources
+/Users/ahmad/RiderProjects/FreeBooks/Domain/obj/Debug/net8.0/Domain.sourcelink.json

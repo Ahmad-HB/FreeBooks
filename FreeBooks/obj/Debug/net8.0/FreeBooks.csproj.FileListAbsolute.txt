@@ -285,3 +285,4 @@
 /Users/ahmad/RiderProjects/FreeBooks/FreeBooks/obj/Debug/net8.0/scopedcss/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml.rz.scp.css
 /Users/ahmad/RiderProjects/FreeBooks/FreeBooks/obj/Debug/net8.0/FreeBooks.Resource.Resources.resources
 /Users/ahmad/RiderProjects/FreeBooks/FreeBooks/obj/Debug/net8.0/FreeBooks.csproj.GenerateResource.cache
+/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/obj/Debug/net8.0/FreeBooks.sourcelink.json
