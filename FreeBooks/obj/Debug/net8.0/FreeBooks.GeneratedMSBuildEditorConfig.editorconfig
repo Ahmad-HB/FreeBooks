@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQ2F0ZWdvcmllcy9DYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/Areas/Admin/Views/Categories/LogCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQ2F0ZWdvcmllcy9Mb2dDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/Areas/Admin/Views/Home/Denied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvSG9tZS9EZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -10,60 +10,65 @@ $(document).ready(function () {
     });
 });
 
-document.getElementById("defaultOpen").click();
-
-
 function Delete(id) {
     Swal.fire({
-        title: lbTitleMsgDelete,
-        text: lbTextMsgDelete,
-        icon: 'warning',
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: lbconfirmButtonText,
-        cancelButtonText: lbcancelButtonText
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
     }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = `/Admin/Categories/DeleteCategories?Id=${id}`;
-            Swal.fire(
-                lbTitleDeletedOk,
-                lbMsgDeletedOkCategory,
-                lbSuccess
-            )
+        if (result.value) {
+            window.location.href =`/Admin/Categories/DeleteCategories?Id=${id}`;
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
         }
-    })
+    });
 }
 
 function DeleteLog(id) {
     Swal.fire({
-        title: lbTitleMsgDelete,
-        text: lbTextMsgDelete,
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: lbconfirmButtonText,
-        cancelButtonText: lbcancelButtonText
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "Cancel!"
     }).then((result) => {
-        if (result.isConfirmed) {
+        if (result.value) {
             window.location.href = `/Admin/Categories/DeleteLog?Id=${id}`;
             Swal.fire(
-                lbTitleDeletedOk,
-                lbMsgDeletedOkCategory,
-                lbSuccess
+                "Deleted!",
+                "Your file has been deleted.",
+                "success"
             )
         }
 
     })
 }
 
-Edit = (id, name, description) => {
-    document.getElementById("title").innerHTML = lbTitleEditCategory;
-    document.getElementById("btnSave").value = lbEdit;
+// Edit = (id, name, description) => {
+//     document.getElementById("title").innerHTML = lbTitleEditCategory;
+//     document.getElementById("btnSave").value = lbEdit;
+//     document.getElementById("categoryId").value = id;
+//     document.getElementById("CategoryName").value = name;
+//     document.getElementById("description").value = description;
+// }
+
+Edit = (id, name, description) =>{
+    document.getElementById("title").innerHTML = "Edit User";
+    document.getElementById("btnSave").value = "Edit";
     document.getElementById("categoryId").value = id;
     document.getElementById("CategoryName").value = name;
     document.getElementById("description").value = description;
+
 }
 
 Reset = () => {

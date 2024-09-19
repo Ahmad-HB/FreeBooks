@@ -1,8 +1,7 @@
 @model CategoryViewModel
-@inject UserManager<ApplicationUser> userManager
 
 @{
-    ViewData["Titel"] = "Categories";
+    ViewData["Title"] = "Categories";
     Layout = "_LayoutAdmin";
 }
 <style>
@@ -79,90 +78,34 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
+                        <table id="tableCategory" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>@Resources.lbNameCategory</td>
+                                <td>@Resources.lbDescription</td>
+                                <td>@Resources.lbEvents</td>
 
-                        <!-- Tab links -->
-                        <div class="tab">
-                            <button class="tablinks" onclick="openCity(event, 'Categories')" id="defaultOpen">@Resources.lbCategories</button>
-                            <button class="tablinks" onclick="openCity(event, 'LogCategories')" id="defaultOpen2">@Resources.lbLogCategories</button>
-                        </div>
-
-                        <!-- Tab content -->
-                        <div id="Categories" class="tabcontent">
-                            <table id="tableCategory" class="table table-bordered table-hover">
-                                <thead>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model.Categories)
+                            {
                                 <tr>
-                                    <td>@Resources.lbNameCategory</td>
-                                    <td>@Resources.lbDescription</td>
-                                    <td>@Resources.lbEvents</td>
-
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.Description
+                                    </td>
+                                    <td>
+                                        <input type="button" class="btn btn-info btn-sm" onclick="Edit('@item.Id','@item.Name','@item.Description')" value="@Resources.lbbtnEdit" data-toggle="modal" data-target="#exampleModal"/>
+                                        |
+                                        <input type="button" class="btn btn-danger btn-sm" onclick="Delete('@item.Id')" value="@Resources.lbbtnDelete"/>
+                                    </td>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                @foreach (var item in Model.Categories)
-                                {
-                                    <tr>
-                                        <td>
-                                            @item.Name
-                                        </td>
-                                        <td>
-                                            @item.Description
-                                        </td>
-                                        <td>
-                                            <input type="button" class="btn btn-info btn-sm" onclick="Edit('@item.Id','@item.Name','@item.Description')" value="@Resources.lbbtnEdit" data-toggle="modal" data-target="#exampleModal"/>
-                                            |
-                                            <input type="button" class="btn btn-danger btn-sm" onclick="Delete('@item.Id')" value="@Resources.lbbtnDelete"/>
-                                        </td>
-                                    </tr>
-                                }
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div id="LogCategories" class="tabcontent">
-                            <table id="tableLogCategory" class="table table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <td>#</td>
-                                    <td>@Resources.lbNameCategory</td>
-                                    <td>@Resources.lbActionName</td>
-                                    <td>@Resources.lbDate</td>
-                                    <td>@Resources.lbUserName</td>
-                                    <td>@Resources.lbEvents</td>
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach (var item in Model.LogCategories)
-                                {
-                                    <tr>
-                                        <td>#</td>
-                                        <td>@item.Category.Name</td>
-                                        <td>
-                                            @switch (@item.Action)
-                                            {
-                                                case "Save":
-                                                    <span class="badge badge-success" style="width:150px; height:25px">@item.Action</span>
-                                                    break;
-                                                case "Update":
-                                                    <span class="badge badge-warning" style="width:150px; height:25px">@item.Action</span>
-                                                    break;
-                                                default:
-                                                    <span class="badge badge-danger" style="width:150px; height:25px">@item.Action</span>
-                                                    break;
-                                            }
-                                        </td>
-                                        <td>@item.Date</td>
-                                        <td>@userManager.FindByIdAsync(item.UserId.ToString()).Result?.Name</td>
-
-                                        <td>
-                                            <input type="button" class="btn btn-danger btn-sm" onclick="DeleteLog('@item.Id')" value="@Resources.lbbtnDelete"/>
-                                        </td>
-                                    </tr>
-                                }
-                                </tbody>
-                            </table>
-                        </div>
-
+                            }
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -221,8 +164,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" hidden="hidden" class="form-control" asp-for="NewCategory.Id" id="categoryId"/>
                 <form asp-action="SaveCategories" asp-controller="Categories" method="post">
+                <input type="text" hidden="hidden" class="form-control" asp-for="NewCategory.Id" id="categoryId"/>
                     <div class="form-group">
                         <label asp-for="NewCategory.Name" class="control-label">@Resources.lbNameCategory</label>
                         <input type="text" class="form-control" asp-for="NewCategory.Name" id="CategoryName"/>
@@ -279,24 +222,6 @@
     }
 
     <script src="~/Models/Categories.js"></script>
-
-    <script>
-
-    let lbTitleEditCategory = '@Html.Raw(Resources.lbTitleEditCategory)';
-    let lbEdit = '@Html.Raw(Resources.lbEdit)';
-    let lbAddNewCategory = '@Html.Raw(Resources.lbAddNewCategory)';
-    let lbbtnSave = '@Html.Raw(Resources.lbbtnSave)';
-
-    let lbTitleMsgDelete = '@Html.Raw(Resources.lbbtnSave)';
-    let lbTextMsgDelete = '@Html.Raw(Resources.lbTextMsgDelete)';
-    let lbconfirmButtonText = '@Html.Raw(Resources.lbconfirmButtonText)';
-    let lbcancelButtonText = '@Html.Raw(Resources.lbcancelButtonText)';
-
-    let lbTitleDeletedOk = '@Html.Raw(Resources.lbTitleDeletedOk)';
-    let lbMsgDeletedOkCategory = '@Html.Raw(Resources.lbMsgDeletedOkCategory)';
-    let lbSuccess = '@Html.Raw(Helper.Success)';
-
-</script>
 
 
 }
