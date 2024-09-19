@@ -8229,28 +8229,44 @@
       "PackagePath": "staticwebassets/Admin/plugins/toastr/toastr.min.js"
     },
     {
-      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/0c27f0f8-63d4-4436-aec1-c28df9132358.png",
-      "PackagePath": "staticwebassets/Images/Users/0c27f0f8-63d4-4436-aec1-c28df9132358.png"
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/13e91481-8ad8-49cb-a2ea-16bd462ee2c2.png",
+      "PackagePath": "staticwebassets/Images/Users/13e91481-8ad8-49cb-a2ea-16bd462ee2c2.png"
     },
     {
-      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/1375185e-7cb9-4405-b5b4-b95a9e0b4789.JPG",
-      "PackagePath": "staticwebassets/Images/Users/1375185e-7cb9-4405-b5b4-b95a9e0b4789.JPG"
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/1fee9ba3-f113-42f8-a18e-34a9cc6864be.png",
+      "PackagePath": "staticwebassets/Images/Users/1fee9ba3-f113-42f8-a18e-34a9cc6864be.png"
     },
     {
-      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/279cbb86-2e7b-4bd8-a62a-199f10ff11b9.png",
-      "PackagePath": "staticwebassets/Images/Users/279cbb86-2e7b-4bd8-a62a-199f10ff11b9.png"
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/46a4fd1c-d768-48dc-9770-d343c3ba8190.jpg",
+      "PackagePath": "staticwebassets/Images/Users/46a4fd1c-d768-48dc-9770-d343c3ba8190.jpg"
     },
     {
-      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/9d853549-28e4-472b-bfd0-5ece784e02a4.jpg",
-      "PackagePath": "staticwebassets/Images/Users/9d853549-28e4-472b-bfd0-5ece784e02a4.jpg"
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/89aca0b4-67b7-4b1d-92a6-8c99914e117f.jpg",
+      "PackagePath": "staticwebassets/Images/Users/89aca0b4-67b7-4b1d-92a6-8c99914e117f.jpg"
     },
     {
-      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/cb7fc952-1986-40e3-b24c-6f76fa801cd8.png",
-      "PackagePath": "staticwebassets/Images/Users/cb7fc952-1986-40e3-b24c-6f76fa801cd8.png"
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/a82d2f8e-2a89-4004-9bbc-413c1d63205c.png",
+      "PackagePath": "staticwebassets/Images/Users/a82d2f8e-2a89-4004-9bbc-413c1d63205c.png"
     },
     {
-      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/f8af89c2-36ff-48f3-b2ca-2d94022e35d7.jpg",
-      "PackagePath": "staticwebassets/Images/Users/f8af89c2-36ff-48f3-b2ca-2d94022e35d7.jpg"
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/c24600e6-4216-4bb8-b490-5d69e048e9f1.png",
+      "PackagePath": "staticwebassets/Images/Users/c24600e6-4216-4bb8-b490-5d69e048e9f1.png"
+    },
+    {
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/e6b02e73-d559-4c5e-b9c9-b35018f5f54c.jpg",
+      "PackagePath": "staticwebassets/Images/Users/e6b02e73-d559-4c5e-b9c9-b35018f5f54c.jpg"
+    },
+    {
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/e7fba600-af76-4d93-8d42-f24dbf60c6a3.JPG",
+      "PackagePath": "staticwebassets/Images/Users/e7fba600-af76-4d93-8d42-f24dbf60c6a3.JPG"
+    },
+    {
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Images/Users/f623634d-42d2-4d7c-ba23-633d4140ed4c.jpg",
+      "PackagePath": "staticwebassets/Images/Users/f623634d-42d2-4d7c-ba23-633d4140ed4c.jpg"
+    },
+    {
+      "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Models/Categories.js",
+      "PackagePath": "staticwebassets/Models/Categories.js"
     },
     {
       "Id": "/Users/ahmad/RiderProjects/FreeBooks/FreeBooks/wwwroot/Models/Registers.js",

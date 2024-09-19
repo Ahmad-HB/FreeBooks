@@ -1,0 +1,109 @@
+using Domain.Entity;
+using Infrastructure.IRepository;
+using Infrastructure.ViewModel;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+
+namespace FreeBooks.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class CategoriesController : Controller
+    {
+        private readonly IServicesRepository<Category> _servicesCategory;
+        private readonly IServicesLogRepository<LogCategory> _servicesLogLogCategory;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+
+        public CategoriesController(IServicesRepository<Category> servicesCategory,
+            IServicesLogRepository<LogCategory> servicesLogRepository, UserManager<ApplicationUser> userManager)
+        {
+            _servicesCategory = servicesCategory;
+            _servicesLogLogCategory = servicesLogRepository;
+            _userManager = userManager;
+        }
+
+
+        // GET: CategoriesController
+        public ActionResult Categories()
+        {
+            return View(new CategoryViewModel
+            {
+                Categories = _servicesCategory.GetAll(),
+                LogCategories = _servicesLogLogCategory.GetAll(),
+                NewCategory = new Category()
+            });
+        }
+
+        public ActionResult DeleteCategories(Guid Id)
+        {
+            var userId = _userManager.GetUserId(User);
+            if (_servicesCategory.Delete(Id) && _servicesLogLogCategory.Delete(Id, Guid.Parse(userId)))
+            {
+                return RedirectToAction(nameof(Categories));
+            }
+
+            return RedirectToAction(nameof(Categories));
+        }
+
+        public IActionResult DeleteLog(Guid Id)
+        {
+            if (_servicesLogLogCategory.DeleteLog(Id))
+            {
+                return RedirectToAction(nameof(Categories));
+            }
+            return RedirectToAction(nameof(Categories));
+        }
+
+        [Host]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> SaveCategories(CategoryViewModel model)
+        {
+            // ModelState.IsValid
+            if (true)
+            {
+                var userId = _userManager.GetUserId(User);
+
+                if (model.NewCategory.Id == Guid.Empty)
+                {
+                    //save
+                    if (_servicesCategory.FindByName(model.NewCategory.Name) != null)
+                    {
+                        TempData["Message"] = "Category already exists!";
+                        return RedirectToAction("Categories");
+                    }
+                    else
+                    {
+                        if (_servicesCategory.Save(model.NewCategory) &&
+                            _servicesLogLogCategory.Save(model.NewCategory.Id, Guid.Parse(userId)))
+                        {
+                            TempData["Message"] = "Category saved!";
+                            return RedirectToAction("Categories");
+                        }
+                        else
+                        {
+                            TempData["Message"] = "Category not saved!";
+                            return RedirectToAction("Categories");
+                        }
+                    }
+                }
+                else
+                {
+                    //update
+                    if (_servicesCategory.Save(model.NewCategory) &&
+                        _servicesLogLogCategory.Update(model.NewCategory.Id, Guid.Parse(userId)))
+                    {
+                        TempData["Message"] = "Category updated!";
+                        return RedirectToAction("Categories");
+                    }
+                    else
+                    {
+                        TempData["Message"] = "Category not updated!";
+                        return RedirectToAction("Categories");
+                    }
+                }
+            }
+
+            return RedirectToAction("Categories");
+        }
+    }
+}

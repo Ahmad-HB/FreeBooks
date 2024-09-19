@@ -452,5 +452,11 @@ namespace FreeBooks.Resource {
                 return ResourceManager.GetString("lbUserName", resourceCulture);
             }
         }
+        
+        internal static string lbLogout {
+            get {
+                return ResourceManager.GetString("lbLogout", resourceCulture);
+            }
+        }
     }
 }

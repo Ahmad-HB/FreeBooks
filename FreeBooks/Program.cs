@@ -1,5 +1,8 @@
 using System.Configuration;
+using Domain.Entity;
 using Infrastructure.Data;
+using Infrastructure.IRepository;
+using Infrastructure.IRepository.ServicesRepository;
 using Infrastructure.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddDbContext<FreeBookDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("Bookconnection"), 
+        builder.Configuration.GetConnectionString("Bookconnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("Bookconnection"))
     )
 );
@@ -25,8 +28,16 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequiredUniqueChars = 0;
     options.Password.RequiredLength = 8;
-    
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Admin";
+    options.AccessDeniedPath = "/Admin/Home/Denied";
+});
+
+builder.Services.AddScoped<IServicesRepository<Category>, ServicesCategory>();
+builder.Services.AddScoped<IServicesLogRepository<LogCategory>, ServicesLogCategory>();
+
 
 var app = builder.Build();
 
@@ -44,13 +55,13 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 
 app.MapControllerRoute(
-    name : "areas",
-    pattern : "{area:exists}/{controller=Accounts}/{action=Login}/{id?}");
+    name: "areas",
+    pattern: "{area:exists}/{controller=Accounts}/{action=Login}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

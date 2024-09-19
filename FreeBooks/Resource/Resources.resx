@@ -268,4 +268,7 @@
     <data name="lbUserName" xml:space="preserve">
     <value>المستخدم</value>
   </data>
+  <data name="lbLogout" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
 </root>

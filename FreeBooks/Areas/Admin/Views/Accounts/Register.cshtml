@@ -50,6 +50,12 @@
                                 <td>@Resources.lbEmailUser</td>
                                 <td>@Resources.lbActiveUser</td>
                                 <td>@Resources.lbEvents</td>
+                                @* <td style="width:15%">@Resources.lbNameUser</td> *@
+                                @* <td style="width:15%">@Resources.lbNameRole</td> *@
+                                @* <td style="width:10%">@Resources.lbImageUser</td> *@
+                                @* <td style="width:15%">@Resources.lbEmailUser</td> *@
+                                @* <td style="width:10%">@Resources.lbActiveUser</td> *@
+                                @* <td style="width:30%">@Resources.lbEvents</td> *@
                             </tr>
                             </thead>
                             <tbody>
@@ -88,6 +94,8 @@
                                         <input type="button" class="btn btn-info btn-sm" onclick="Edit('@user.Id','@user.Name','@user.Email','@user.ImageUser','@user.ActiveUser','@user.Role','@Helper.PathImageUser/@user.ImageUser')" value="@Resources.lbbtnEdit" data-toggle="modal" data-target="#exampleModal"/>
                                         |
                                         <input type="button" class="btn btn-danger btn-sm" onclick="DeleteUser('@user.Id')" value="@Resources.lbbtnDelete"/>
+                                        <br/>
+                                        <input type="button" class="btn btn-success btn-sm" onclick="ChangePassword('@user.Id')" value="@Resources.lbbtnChangePassword"data-toggle="modal" data-target="#ChangePasswordModal"/>
                                     </td>
 
                                 </tr>
@@ -163,6 +171,41 @@
                     </div>
                     <div class="modal-footer-rtl">
                         <input type="submit" class="btn btn-success" value="@Resources.lbbtnSave" id="btnSave"/>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Change Password-->
+<div class="modal fade" id="ChangePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="title">@Resources.lbbtnChangePassword</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="ChangePassword" asp-controller="Accounts" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" hidden="hidden" class="form-control" asp-for="ChangePassword.Id" id="userPassId"/>
+                        
+                        <label asp-for="ChangePassword.NewPassword" class="control-label">@Resources.lbPassword</label>
+                        <input type="password" class="form-control" asp-for="ChangePassword.NewPassword"/>
+                        <span asp-validation-for="ChangePassword.NewPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChangePassword.ComparePassword" class="control-label">@Resources.lbComparePassword</label>
+                        <input type="password" class="form-control" asp-for="ChangePassword.ComparePassword"/>
+                        <span asp-validation-for="ChangePassword.ComparePassword" class="text-danger"></span>
+                    </div>
+                    <div class="modal-footer-rtl">
+                        <input type="submit" class="btn btn-success" value="@Resources.lbbtnSave" id="btnSavepass"/>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>

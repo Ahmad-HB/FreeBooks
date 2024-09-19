@@ -4,25 +4,43 @@ using Infrastructure.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace FreeBooks.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Authorize]
 public class AccountsController : Controller
 {
+    #region Declaration
+
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly FreeBookDbContext _context;
 
+    #endregion
+
+
+    #region Constructor
+
     public AccountsController(RoleManager<IdentityRole> roleManager,
-        UserManager<ApplicationUser> userManager, FreeBookDbContext context)
+        UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
+        FreeBookDbContext context)
     {
         _roleManager = roleManager;
         _userManager = userManager;
+        _signInManager = signInManager;
         _context = context;
     }
 
+    #endregion
+
+
+    #region Methods
+
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
     public IActionResult Roles()
     {
         return View(new RolesViewModel
@@ -34,6 +52,7 @@ public class AccountsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
     public async Task<IActionResult> Roles(RolesViewModel model)
     {
         if (true)
@@ -144,6 +163,7 @@ public class AccountsController : Controller
     //     return View();
     // }
 
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
     public async Task<IActionResult> DeleteRole(string Id)
     {
         var role = _roleManager.Roles.FirstOrDefault(x => x.Id == Id);
@@ -156,6 +176,7 @@ public class AccountsController : Controller
     }
 
 
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin,user,User")]
     public IActionResult Register()
     {
         return View(new RegisterViewModel
@@ -368,8 +389,10 @@ public class AccountsController : Controller
     //     return RedirectToAction(nameof(Register), "Accounts");
     // }
 
+
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
     public async Task<IActionResult> Register(RegisterViewModel model)
     {
         // ModelState.IsValid
@@ -588,8 +611,9 @@ public class AccountsController : Controller
     //
     //     return RedirectToAction("Register", "Accounts");
     // }
-    
-    
+
+
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
     public async Task<IActionResult> DeleteUser(string Id)
     {
         var user = _userManager.Users.FirstOrDefault(x => x.Id == Id);
@@ -604,19 +628,84 @@ public class AccountsController : Controller
                 System.IO.File.Delete(PathImage);
             }
         }
-    
+
         if ((await _userManager.DeleteAsync(user)).Succeeded)
         {
             return RedirectToAction("Register", "Accounts");
         }
-    
+
         return RedirectToAction("Register", "Accounts");
     }
-    
 
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin,SuperAdmin,Super Admin,user,User")]
+    public async Task<IActionResult> ChangePassword(RegisterViewModel model)
+    {
+        var user = _userManager.FindByIdAsync(model.ChangePassword.Id.ToString());
+        if (user != null)
+        {
+            await _userManager.RemovePasswordAsync(await user);
+            var AddNewPassword = await _userManager.AddPasswordAsync(await user, model.ChangePassword.NewPassword);
+            if (AddNewPassword.Succeeded)
+            {
+                HttpContext.Session.SetString("msgType", "success");
+                HttpContext.Session.SetString("title", Resource.Resources.lbSave);
+                HttpContext.Session.SetString("msg", Resource.Resources.lbMsgSavedChangePassword);
+            }
+            else
+            {
+                HttpContext.Session.SetString("msgType", "error");
+                HttpContext.Session.SetString("title", Resource.Resources.lbNotSaved);
+                HttpContext.Session.SetString("msg", Resource.Resources.lbMsgNotSavedChangePassword);
+            }
+
+            return RedirectToAction(nameof(Register));
+        }
+
+        return RedirectToAction(nameof(Register));
+    }
+
+
+    [AllowAnonymous]
     public IActionResult Login()
     {
         return View();
     }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [AllowAnonymous]
+    public async Task<IActionResult> Login(LoginViewModel model)
+    {
+        // ModelState.IsValid
+        if (true)
+        {
+            var Resualt =
+                await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            if (Resualt.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.ErrorLogin = false;
+            }
+
+            return View(model);
+        }
+    }
+
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [AllowAnonymous]
+    public async Task<IActionResult> Logout(LoginViewModel model)
+    {
+        await _signInManager.SignOutAsync();
+        return RedirectToAction(nameof(Login));
+    }
+
+    #endregion
 }

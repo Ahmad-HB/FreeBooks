@@ -10,6 +10,7 @@ public class RegisterViewModel
     public List<VwUser> Users { get; set; }
     public NewRegister NewRegister { get; set; }
     public List<IdentityRole> Roles { get; set; }
+    public ChangePasswordViewModel ChangePassword { get; set; }
 }
 
 public class NewRegister

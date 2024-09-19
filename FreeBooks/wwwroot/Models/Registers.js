@@ -26,7 +26,7 @@ function DeleteUser(id) {
     });
 }
 
-Edit = (id, name, email, imageuser, activeuser, rolename,PathImageUser) => {
+Edit = (id, name, email, imageuser, activeuser, rolename, PathImageUser) => {
     document.getElementById("title").innerHTML = "Edit User";
     document.getElementById("btnSave").value = "Edit";
     document.getElementById("userId").value = id;
@@ -47,8 +47,8 @@ Edit = (id, name, email, imageuser, activeuser, rolename,PathImageUser) => {
     document.getElementById("userPassword").value = "$$$$$$$$";
     document.getElementById("userCompare").value = "$$$$$$$$";
     document.getElementById("image").hidden = false;
-    document.getElementById("image").src=PathImageUser;
-    document.getElementById("ImageHide").value =imageuser;
+    document.getElementById("image").src = PathImageUser;
+    document.getElementById("ImageHide").value = imageuser;
 
 }
 
@@ -65,4 +65,8 @@ Reset = () => {
     document.getElementById("userPassword").value = "";
     document.getElementById("userCompare").value = "";
     document.getElementById("image").hidden = true;
+}
+
+function ChangePassword(id) {
+    document.getElementById("userPassId").value = id;
 }
