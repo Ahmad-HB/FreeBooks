@@ -1,12 +1,15 @@
+using Domain.Constants;
 using Domain.Entity;
 using Infrastructure.IRepository;
 using Infrastructure.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FreeBooks.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Permissions.Accounts.View)]
     public class CategoriesController : Controller
     {
         private readonly IServicesRepository<Category> _servicesCategory;
@@ -24,6 +27,7 @@ namespace FreeBooks.Areas.Admin.Controllers
 
 
         // GET: CategoriesController
+        [Authorize(Permissions.Categories.View)]
         public ActionResult Categories()
         {
             return View(new CategoryViewModel
@@ -35,6 +39,7 @@ namespace FreeBooks.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Permissions.Categories.View)]
         public ActionResult LogCategories()
         {
             return View(new CategoryViewModel
@@ -45,6 +50,7 @@ namespace FreeBooks.Areas.Admin.Controllers
             });
         }
 
+        [Authorize(Permissions.Categories.Delete)]
         public ActionResult DeleteCategories(Guid Id)
         {
             var userId = _userManager.GetUserId(User);
@@ -56,6 +62,7 @@ namespace FreeBooks.Areas.Admin.Controllers
             return RedirectToAction(nameof(Categories));
         }
 
+        [Authorize(Permissions.Categories.Delete)]
         public IActionResult DeleteLog(Guid Id)
         {
             if (_servicesLogLogCategory.DeleteLog(Id))
@@ -68,6 +75,7 @@ namespace FreeBooks.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Permissions.Categories.Create)]
         public async Task<ActionResult> SaveCategories(CategoryViewModel model)
         {
             // ModelState.IsValid

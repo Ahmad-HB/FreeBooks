@@ -1,16 +1,18 @@
 using Domain.Entity;
+using Microsoft.AspNetCore.Mvc;
 using Infrastructure.Data;
 using Infrastructure.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
+using Domain.Constants;
 using Microsoft.AspNetCore.Authorization;
 
 
 namespace FreeBooks.Areas.Admin.Controllers;
 
 [Area("Admin")]
-[Authorize]
+[Authorize(Permissions.Accounts.View)]
 public class AccountsController : Controller
 {
     #region Declaration
@@ -39,8 +41,8 @@ public class AccountsController : Controller
 
 
     #region Methods
-
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
+    
+    [Authorize(Permissions.Roles.View)]
     public IActionResult Roles()
     {
         return View(new RolesViewModel
@@ -52,7 +54,7 @@ public class AccountsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
+    [Authorize(Permissions.Roles.Create)]
     public async Task<IActionResult> Roles(RolesViewModel model)
     {
         if (true)
@@ -162,8 +164,9 @@ public class AccountsController : Controller
     //     }
     //     return View();
     // }
-
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
+    
+    
+    [Authorize(Permissions.Roles.Delete)]
     public async Task<IActionResult> DeleteRole(string Id)
     {
         var role = _roleManager.Roles.FirstOrDefault(x => x.Id == Id);
@@ -175,8 +178,7 @@ public class AccountsController : Controller
         return RedirectToAction("Roles");
     }
 
-
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin,user,User")]
+    [Authorize(Permissions.Accounts.View)]
     public IActionResult Register()
     {
         return View(new RegisterViewModel
@@ -392,7 +394,7 @@ public class AccountsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
+    [Authorize(Permissions.Registers.Create)]
     public async Task<IActionResult> Register(RegisterViewModel model)
     {
         // ModelState.IsValid
@@ -612,8 +614,8 @@ public class AccountsController : Controller
     //     return RedirectToAction("Register", "Accounts");
     // }
 
-
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin")]
+    
+    [Authorize(Permissions.Accounts.Delete)]
     public async Task<IActionResult> DeleteUser(string Id)
     {
         var user = _userManager.Users.FirstOrDefault(x => x.Id == Id);
@@ -640,7 +642,7 @@ public class AccountsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Roles = "Admin,SuperAdmin,Super Admin,user,User")]
+    [Authorize(Permissions.Accounts.Create)]
     public async Task<IActionResult> ChangePassword(RegisterViewModel model)
     {
         var user = _userManager.FindByIdAsync(model.ChangePassword.Id.ToString());

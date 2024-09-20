@@ -1,9 +1,12 @@
 using System.Configuration;
 using Domain.Entity;
+using FreeBooks.Permission;
 using Infrastructure.Data;
 using Infrastructure.IRepository;
 using Infrastructure.IRepository.ServicesRepository;
+using Infrastructure.Seeds;
 using Infrastructure.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,9 +38,18 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Admin/Home/Denied";
 });
 
+
+builder.Services.Configure<SecurityStampValidatorOptions>(options =>
+{
+    options.ValidationInterval = TimeSpan.Zero;
+});
+
+
 builder.Services.AddScoped<IServicesRepository<Category>, ServicesCategory>();
 builder.Services.AddScoped<IServicesLogRepository<LogCategory>, ServicesLogCategory>();
 
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
+builder.Services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
 
 var app = builder.Build();
 
@@ -66,5 +78,22 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+try
+{
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    
+    await DefultRole.SeedAsync(roleManager);
+    await DefultUser.SeedSuperAdminAsync(userManager, roleManager);
+    await DefultUser.SeedBasicUserAsync(userManager, roleManager);
+}
+catch (Exception ex)
+{
+    // Log error here if needed
+    throw;
+}
 
 app.Run();

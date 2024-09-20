@@ -8,24 +8,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fedbe91b-0be9-42ae-9c7f-fc41cd28d068" name="Changes" comment="near Final">
-      <change afterPath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Views/Categories/LogCategories.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FreeBooks/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FreeBooks/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="fedbe91b-0be9-42ae-9c7f-fc41cd28d068" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Domain/Constants/Permissions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Controllers/PermissionsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Views/Permissions/Permission.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FreeBooks/wwwroot/Images/Users/user1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Seeds/DefultRole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Seeds/DefultUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/ViewModel/PermissionViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FreeBooks/.idea/dataSources/aa399c10-741b-47e5-b1ed-eb23d91d9c2a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FreeBooks/.idea/dataSources/aa399c10-741b-47e5-b1ed-eb23d91d9c2a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FreeBooks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FreeBooks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Controllers/CategoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Controllers/CategoriesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Views/Categories/Categories.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Views/Categories/Categories.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entity/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entity/Helper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/ref/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/refint/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/FreeBooks.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/FreeBooks.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/FreeBooks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/FreeBooks.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/FreeBooks.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/FreeBooks.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/FreeBooks.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/FreeBooks.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/bin/Debug/net8.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/FreeBooks.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/ref/FreeBooks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/ref/FreeBooks.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/refint/FreeBooks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/refint/FreeBooks.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeBooks/wwwroot/Models/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/wwwroot/Models/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets/msbuild.FreeBooks.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/Debug/net8.0/staticwebassets/msbuild.FreeBooks.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeBooks/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/FreeBooks/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/IRepository/ServicesRepository/ServicesCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/IRepository/ServicesRepository/ServicesCategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/refint/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,26 +125,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.FreeBooks: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.111801244",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.FreeBooks: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.111801244&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.FreeBooks: https">
     <configuration name="FreeBooks: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/FreeBooks/FreeBooks.csproj" />
@@ -164,7 +202,8 @@
       <workItem from="1726644956874" duration="1031000" />
       <workItem from="1726663877570" duration="10598000" />
       <workItem from="1726729922036" duration="11038000" />
-      <workItem from="1726751001430" duration="11302000" />
+      <workItem from="1726751001430" duration="16671000" />
+      <workItem from="1726791933832" duration="4049000" />
     </task>
     <task id="LOCAL-00001" summary="second">
       <option name="closed" value="true" />
@@ -190,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726769605251</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="near Final Fix">
+      <option name="closed" value="true" />
+      <created>1726774007531</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726774007531</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,23 +262,19 @@
     <MESSAGE value="second" />
     <MESSAGE value="Third" />
     <MESSAGE value="near Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="near Final" />
+    <MESSAGE value="near" />
+    <MESSAGE value="near Final Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="near Final Fix" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/FreeBooks/wwwroot/Models/Categories.js</url>
-          <line>67</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary" memberName="ErrorCount" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

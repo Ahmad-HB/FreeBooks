@@ -1,9 +1,12 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FreeBooks.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FreeBooks.Controllers;
 
+
+[AllowAnonymous]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

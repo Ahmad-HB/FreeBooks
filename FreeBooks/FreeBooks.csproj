@@ -34,7 +34,6 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\Admin\" />
-      <Folder Include="wwwroot\Images\Users\" />
       <Folder Include="wwwroot\Web\" />
     </ItemGroup>
 

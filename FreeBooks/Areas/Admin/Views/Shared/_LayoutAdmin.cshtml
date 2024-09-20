@@ -1,5 +1,9 @@
-﻿@inject UserManager<ApplicationUser> userManager
+﻿@using System.Net
+@using Domain.Constants
+@inject UserManager<ApplicationUser> userManager
 @inject SignInManager<ApplicationUser> signInManager
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
 
 <!DOCTYPE html>
 <html>
@@ -228,30 +232,43 @@ with font-awesome or any other icon font library -->
         </p>
     </a>
     <ul class="nav nav-treeview">
-        <li class="nav-item">
-            <a href="/Admin/Accounts/Roles/" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>@Resources.lbRoles</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/Admin/Accounts/Register/" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>@Resources.lbRegisters</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/Admin/Categories/Categories/" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>@Resources.lbCategories</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/Admin/Categories/LogCategories/" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>@Resources.lbLogCategories</p>
-            </a>
-        </li>
+        @if (AuthorizationService.AuthorizeAsync(User, Permissions.Roles.View).Result.Succeeded)
+        {
+            <li class="nav-item">
+                <a href="/Admin/Accounts/Roles/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>@Resources.lbRoles</p>
+                </a>
+            </li>
+        }
+        @if (AuthorizationService.AuthorizeAsync(User, Permissions.Registers.View).Result.Succeeded)
+        {
+            <li class="nav-item">
+                <a href="/Admin/Accounts/Register/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>@Resources.lbRegisters</p>
+                </a>
+            </li>
+        }
+        @if (AuthorizationService.AuthorizeAsync(User, Permissions.Categories.View).Result.Succeeded)
+        {
+            <li class="nav-item">
+                <a href="/Admin/Categories/Categories/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>@Resources.lbCategories</p>
+                </a>
+            </li>
+        }
+        @if (AuthorizationService.AuthorizeAsync(User, Permissions.Categories.View).Result.Succeeded)
+        {
+            <li class="nav-item">
+                <a href="/Admin/Categories/LogCategories/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>@Resources.lbLogCategories</p>
+                </a>
+            </li>
+        }
+        
     </ul>
 </li>
 <li class="nav-item">
